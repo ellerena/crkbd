@@ -42,12 +42,12 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |     |     |     |     |     |   |     |     |     |     |  UP | DEL |
-// | BT1  | BT2 | BT3 | BT4 |     |     |   |     |     |     |     | LFT | RGT |
+// | BTC  | BT1 | BT2 | BT3 |     |     |   |     |     |     |     | LFT | RGT |
 // | SHFT |     |     |     |     |     |   |     |     |     |     | DWN |     |
 //                    | CTR | ENT |     |   | SPC |     | ALT |
                         bindings = <
    &kp ESC      &trans       &trans       &trans       &trans  &trans        &trans  &trans  &trans  &trans &kp UP    &kp DEL
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans  &trans        &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
+   &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans  &trans        &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
    &kp LSHFT    &trans       &trans       &trans       &trans  &trans        &trans  &trans  &trans  &trans &kp DOWN  &trans
                     	                  &kp LGUI     &kp RET &trans        &trans  &kp SPACE  &kp RALT
                         >;
