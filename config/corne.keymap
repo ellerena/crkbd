@@ -19,16 +19,7 @@
 #define VOLD C_VOLUME_DOWN
 
 / {
-        macros {
-        ptr: ptr {
-            label = "ZM_ptr";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp MINUS &kp GREATER_THAN>
-                ;
-            };
-        };
+
 
         keymap {
                 compatible = "zmk,keymap";
