@@ -56,7 +56,7 @@
    &kp CAPS  &trans  &trans  &trans  &trans  &trans     &kp GRAVE  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp EQUAL
    &trans    &trans  &trans  &trans  &trans  &trans     &mptr      &kp N4  &kp N5  &kp N6  &kp LBKT   &kp RBKT
    &trans    &trans  &trans  &trans  &trans  &trans     &kp N0     &kp N1  &kp N2  &kp N3  &kp LPAR   &kp RPAR
-                             &trans  &tran   &trans     &trans     &trans  &trans
+                             &trans  &trans   &trans     &trans     &trans  &trans
                         >;
                 };
 
