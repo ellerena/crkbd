@@ -8,8 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define KMULT KP_MULTIPLY
-#define KCAPS CAPSLOCK
+#define MULT KP_MULTIPLY
 #define BTC BT_CLR
 #define BT1 BT_SEL 0
 #define BT2 BT_SEL 1
@@ -20,42 +19,53 @@
 #define VOLD C_VOLUME_DOWN
 
 / {
+        macros {
+        ptr: ptr {
+            label = "ZM_ptr";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp MINUS &kp GREATER_THAN>
+                ;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// < COMM >  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ;:  | '"   |
-// < SHFT >  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ,<  | .>  | /?  | |\   |
-//                    < CTR > ENT | LWR |   | RSE | SPC  < OPT >
+// [ COMM ]  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ;:  | '"   |
+// [ SHFT ]  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ,<  | .>  | /?  | |\   |
+//                    [ CTR ] ENT | RSE |   | LWR | SPC  [ OPT ]
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y  &kp U     &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H  &kp J     &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N  &kp M     &kp COMMA &kp DOT &kp FSLH &kp PIPE
-                    &kp LGUI &kp RET &mo 1   &mo 2 &kp SPACE &kp RALT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp PIPE
+                    &kp LGUI &kp RET &mo 2   &mo 1 &kp SPACE &kp RALT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// | CAPS |  !  |  @  |  #  |  $  |  %  |   |  `  |  1  |  2  |  3  |  ( |  ) |
-// < COMM >  ^  |  &  |  *  |     |     |   |  ~  |  4  |  5  |  6  | [{ | ]} |
-// < SHFT >     |     |     |     |     |   |  \  |  7  |  8  |  9  | -_ | =+ |
-//                    | CTR | ENT |     |   |     |  0  | OPT |
+// | CAPS |     |     |     |     |     |   | `~  |  7  |  8  |  9  | -_ | =+ |
+// [ COMM ]     |     |     |     |     |   | ->  |  4  |  5  |  6  | [{ | ]} |
+// [ SHFT ]     |     |     |     |     |   |  0  |  1  |  2  |  3  |  ( |  ) |
+//                    [ CTR ] ENT |     |   |     |     | OPT |
                         bindings = <
-   &kp KCAPS  &kp EXCL   &kp AT    &kp HASH   &kp DLLR  &kp PRCNT     &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp LPAR   &kp RPAR
-   &trans     &kp CARET  &kp AMPS  &kp KMULT  &trans    &trans        &kp TILDE  &kp N4  &kp N5  &kp N6  &kp LBKT   &kp RBKT
-   &trans     &trans     &trans    &trans     &trans    &trans        &kp BSLH   &kp N7  &kp N8  &kp N9  &kp MINUS  &kp EQUAL
-                         	   &trans     &trans    &trans        &trans     &kp N0  &trans
+   &kp CAPS  &trans  &trans  &trans  &trans  &trans     &kp GRAVE  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp EQUAL
+   &trans    &trans  &trans  &trans  &trans  &trans     &ptr       &kp N4  &kp N5  &kp N6  &kp LBKT   &kp RBKT
+   &trans    &trans  &trans  &trans  &trans  &trans     &kp N0     &kp N1  &kp N2  &kp N3  &kp LPAR   &kp RPAR
+                             &trans  &tran   &trans     &trans     &trans  &trans
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC | BT1 | VOL+|     |     |     |   |     |     |     |     |  UP | DEL |
-// < COMM > BT2 | VOL-|     |     |     |   |     |     |     |     | LFT | RGT |
-// < SHFT > BT3 | BTC |     |     |     |   |     |     |     |     | DWN |     |
-//                    | CTR | ENT |     |   |     | SPC | OPT |
+// [ COMM ] BT2 | VOL-|     |     |     |   |     |     |     |     | LFT | RGT |
+// [ SHFT ] BT3 | BTC |     |     |     |   |     |     |     |     | DWN |     |
+//                    [ CTR ] ENT |     |   |     |     [ OPT ]
                         bindings = <
    &kp ESC  &bt BT1  &kp VOLU  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp UP    &kp DEL
    &trans   &bt BT2  &kp VOLD  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
