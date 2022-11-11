@@ -15,8 +15,9 @@
 #define BT3 BT_SEL 2
 #define BT4 BT_SEL 3
 #define BT5 BT_SEL 4
-#define VOUP C_VOLUME_UP
-#define VODN C_VOLUME_DOWN
+
+
+#ifdef
 
 / {
         macros {
@@ -38,6 +39,20 @@
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT)>;
                 };
+        volbriU: vol_brightU {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VOL_BRIGHTU";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_BRIGHTNESS_INC>;
+            mods = <(MOD_LSFT)>;
+                };
+        volbriD: vol_brightD {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VOL_BRIGHTD";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_BRIGHTNESS_DEC>;
+            mods = <(MOD_LSFT)>;
+                };
         };
 
         keymap {
@@ -48,12 +63,12 @@
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // [ COMM ]  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ;:  | '"   |
 // [ SHFT ]  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ,<  | .>  | /?  | |\   |
-//                    [ CTR ] RSE | ENT |   | SPC | LWR  [ OPT ]
+//                    [ CTR ] ENT | RSE |   | LWR | SPC  [ OPT ]
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y  &kp U  &kp I     &kp O   &kp P    &bade
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp PIPE
-                  &kp LGUI  &mo 2  &kp RET   &kp SPACE  &mo 1  &kp RALT
+                  &kp LGUI  &kp RET  &mo 2   &mo 1  &kp SPACE  &kp RALT
                         >;
                 };
                 lower_layer {
@@ -73,12 +88,12 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC | BT1 | VOL+|     |     |<alt>|   |     |     |     |     |  UP | DEL |
-// [ COMM ] BT2 | VOL-|     |     |<def>|   |     |     |     |     | LFT | RGT |
+// [ COMM ] BT2 | VOL-|     |     |     |   |     |     |     |     | LFT | RGT |
 // [ SHFT ] BT3 | BTC |     |     |     |   |     |     |     |     | DWN |     |
 //                    [ CTR ] ENT |     |   |     |     [ OPT ]
                         bindings = <
-   &kp ESC  &bt BT1  &kp VOUP  &trans  &trans  &tog 3     &trans  &trans  &trans  &trans &kp UP    &kp DEL
-   &trans   &bt BT2  &kp VODN  &trans  &trans  &tog 0     &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
+   &kp ESC  &bt BT1  &volbriU  &trans  &trans  &tog 3     &trans  &trans  &trans  &trans &kp UP    &kp DEL
+   &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
    &trans   &bt BT3  &bt BTC   &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp DOWN  &trans
                     	       &trans  &trans  &trans     &trans  &trans  &trans
                         >;
@@ -94,7 +109,7 @@
    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &mo 2  &kp RET     &kp SPACE  &mo 1  &trans
+                           &trans  &mo 2  &kp RET     &kp SPACE  &mo 1  &tog 3
                         >;
                 };
         };
