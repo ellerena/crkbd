@@ -58,14 +58,14 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// [ COMM ]  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ;:  | '"   |
-// [ RAIS ]  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ,<  | .>  | /?  | |\   |
+// [ RAIS ]  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  | ;:  | '"   |
+// [ COMM ]  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   | ,<  | .>  | /?  | |\   |
 //                    [ CTR ] ENT | SHF |   | LWR | SPC  [ OPT ]
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y  &kp U  &kp I     &kp O   &kp P    &bade
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &mo 2     &kp Z &kp X &kp C &kp V &kp B   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp PIPE
-                   &kp LGUI  &kp RET  &kp LSHFT  &mo 1  &kp SPACE  &kp RALT
+   &mo 2     &kp A &kp S &kp D &kp F &kp G   &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LGUI  &kp Z &kp X &kp C &kp V &kp B   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
+                   &kp LCTRL  &kp RET  &kp LSHFT  &mo 1  &kp SPACE  &kp RALT
                         >;
                 };
                 lower_layer {
@@ -84,12 +84,12 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC | BT1 | VOL+|     |     |     |   |     |     |     |     |  UP | DEL |
+// |  ESC | BT1 | VOL+|     |     |     |   |     |     |     |     |  UP |     |
 // [ COMM ] BT2 | VOL-|     |     |     |   |     |     |     |     | LFT | RGT |
 // [ SHFT ] BT3 | BT4 |     |     |     |   |     |     |     |     | DWN |     |
 //                    [ CTR ] ENT |     |   |     |     [ OPT ]
                         bindings = <
-   &kp ESC  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp UP    &kp DEL
+   &kp ESC  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp UP    &transL
    &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
    &trans   &bt BT3  &bt BT4   &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp DOWN  &trans
                     	       &trans  &trans  &trans     &trans  &trans  &trans
@@ -97,4 +97,3 @@
                 };
         };
 };
-
