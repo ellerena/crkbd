@@ -89,7 +89,7 @@
 // [ SHFT ] BT3 | BT4 |     |     |     |   |     |     |     |     | DWN |     |
 //                    [ CTR ] ENT |     |   |     |     [ OPT ]
                         bindings = <
-   &kp ESC  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp UP    &transL
+   &kp ESC  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp UP    &trans
    &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
    &trans   &bt BT3  &bt BT4   &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp DOWN  &trans
                     	       &trans  &trans  &trans     &trans  &trans  &trans
