@@ -84,14 +84,14 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB | BT1 | VOL+|     |     |     |   |     |     |     |     |  UP |     |
-// [      ] BT2 | VOL-|     |     |     |   |     |     |     |     | LFT | RGT |
-// [      ] BT3 | BT4 |     |     |     |   |     |     |     |     | DWN |     |
+// |  TAB | BT1 | VOL+|     |     |     |   |     |     |     |     |     | DEL |
+// [      ] BT2 | VOL-|     |     |     |   |     |     |     |     |  UP |     |
+// [      ] BT3 | BT4 |     |     |     |   |     |     |     | LFT | DWN | RGT |
 //                    [ CTR ] ENT |     |   |     |     [     ]
                         bindings = <
-   &kp TAB  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp UP    &trans
-   &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp LEFT  &kp RIGHT
-   &trans   &bt BT3  &bt BTC   &trans  &trans  &trans     &trans  &trans  &trans  &trans &kp DOWN  &trans
+   &kp TAB  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &        &kp DEL
+   &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &kp UP   &
+   &trans   &bt BT3  &bt BTC   &trans  &trans  &trans     &trans  &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT
                     	       &trans  &trans  &trans     &trans  &trans  &trans
                         >;
                 };
