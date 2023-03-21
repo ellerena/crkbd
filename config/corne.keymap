@@ -89,8 +89,8 @@
 // [      ] BT3 | BT4 |     |     |     |   |     |     |     | LFT | DWN | RGT |
 //                    [ CTR ] ENT |     |   |     |     [     ]
                         bindings = <
-   &kp TAB  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &        &kp DEL
-   &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &kp UP   &
+   &kp TAB  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &trans   &kp DEL
+   &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &kp UP   &trans
    &trans   &bt BT3  &bt BTC   &trans  &trans  &trans     &trans  &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT
                     	       &trans  &trans  &trans     &trans  &trans  &trans
                         >;
