@@ -26,7 +26,6 @@
                 = <&macro_tap &kp MINUS &kp GREATER_THAN>
                 ;
             };
-        };
 
         ter_cls: ter_cls {
             label = "ZM_terminal_clear";
