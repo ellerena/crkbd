@@ -37,7 +37,6 @@
                 , <&macro_release &kp LGUI>
                 ;
             };
-        };
 
         ctrl_r: ctrl_r {
             label = "ZM_ctrl_r";
