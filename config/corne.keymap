@@ -27,8 +27,8 @@
                 ;
             };
 
-        ctrl_k: ctrl_k {
-            label = "ZM_ctrl_k";
+        ctr_k: ctr_k {
+            label = "ZM_ctr_k";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -40,8 +40,20 @@
                 ;
             };
 
-        ctrl_r: ctrl_r {
-            label = "ZM_ctrl_r";
+        ctr_k1: ctr_k1 {
+            label = "ZM_ctr_k1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp L>
+                , <&macro_tap &kp 1>
+                , <&macro_release &kp LGUI>
+                ;
+            };
+
+        ctr_r: ctr_r {
+            label = "ZM_ctr_r";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -116,7 +128,7 @@
    &kp TAB  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &trans   &kp DEL
    &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &kp UP   &trans
    &trans   &bt BT3  &bt BTC   &trans  &trans  &trans     &trans  &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT
-                    	       &ctrl_r &ctrl_k &trans     &trans  &trans  &trans
+                    	       &ctr_r  &ctr_k  &trans     &trans  &ctr_k1 &trans
                         >;
                 };
         };
