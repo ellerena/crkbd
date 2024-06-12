@@ -52,6 +52,17 @@
                 ;
             };
 
+        ctr_dot: ctr_dot {
+            label = "ZM_ctr_dot";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp .>
+                , <&macro_release &kp LGUI>
+                ;
+            };
+
         ctr_r: ctr_r {
             label = "ZM_ctr_r";
             compatible = "zmk,behavior-macro";
@@ -122,12 +133,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB | BT1 | VOL+|     |     |     |   |     |     |     |     |     | DEL |
 // [      ] BT2 | VOL-|     |     |     |   |     |     |     |     |  UP |     |
-// [      ] BT3 | BTC |     |     |     |   |     |     |     | LFT | DWN | RGT |
+// [      ] BT3 | BTC |     |     |CTR. |   |     |     |     | LFT | DWN | RGT |
 //                    [ CTR ] CTK |     |   |     |     [     ]
                         bindings = <
    &kp TAB  &bt BT1  &volbriU  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &trans   &kp DEL
    &trans   &bt BT2  &volbriD  &trans  &trans  &trans     &trans  &trans  &trans  &trans   &kp UP   &trans
-   &trans   &bt BT3  &bt BTC   &trans  &trans  &trans     &trans  &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT
+   &trans   &bt BT3  &bt BTC   &trans  &trans  &ctr_dot   &trans  &trans  &trans  &kp LEFT &kp DOWN &kp RIGHT
                     	       &ctr_r  &ctr_k  &trans     &trans  &ctr_k1 &trans
                         >;
                 };
