@@ -13,7 +13,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[2] = LAYOUT_split_3x6_3(KC_TAB, KC_BRIU, KC_VOLU, KC_NO, KC_NO, SGUI(KC_4), KC_HOME, KC_NO, KC_NO, KC_NO, KC_NO, KC_DEL, KC_TRNS, KC_BRID, KC_VOLD, KC_NO, KC_NO, KC_NO, KC_PGUP, KC_NO, KC_NO, KC_NO, KC_UP, KC_NO, KC_TRNS, KC_CALC, KC_NO, KC_NO, KC_NO, LGUI(KC_DOT), KC_PGDN, QK_MACRO_1, QK_MACRO_2, KC_LEFT, KC_DOWN, KC_RGHT, LCTL(KC_R), LGUI(KC_K), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
@@ -21,13 +20,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("->");
                 return false;
             case QK_MACRO_1:
-                SEND_STRING(SS_LCTL("k1"));
+                SEND_STRING(SS_LGUI("k1"));
                 return false;
             case QK_MACRO_2:
-                SEND_STRING(SS_LCTL("k2"));
+                SEND_STRING(SS_LGUI("k2"));
                 return false;
             case QK_MACRO_3:
-                SEND_STRING(SS_LCTL("k3"));
+                SEND_STRING(SS_LGUI("k3"));
                 return false;
         }
     }
