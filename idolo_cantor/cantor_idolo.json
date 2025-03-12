@@ -4,26 +4,6 @@
   "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
   "keyboard": "cantor",
   "keymap": "cantor_idolo",
-  "macros": [
-    [
-      "->"
-    ],
-    [
-      {"action":"down", "keycodes": ["KC_LCTL"]},
-      "k1",
-      {"action": "up","keycodes": ["KC_LCTL"]}
-    ],
-    [
-      {"action":"down", "keycodes": ["KC_LCTL"]},
-      "k2",
-      {"action": "up","keycodes": ["KC_LCTL"]}
-    ],
-    [
-      {"action":"down", "keycodes": ["KC_LCTL"]},
-      "k3",
-      {"action": "up","keycodes": ["KC_LCTL"]}
-    ]
-  ],
   "layout": "LAYOUT_split_3x6_3",
   "layers": [
     [
@@ -89,7 +69,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "QK_MACRO_0",
+      "ANY(QK_MACRO_0)",
       "KC_4",
       "KC_5",
       "KC_6",
@@ -146,8 +126,8 @@
       "KC_NO",
       "LGUI(KC_DOT)",
       "KC_PGDN",
-      "QK_MACRO_1",
-      "QK_MACRO_2",
+      "ANY(QK_MACRO_1)",
+      "ANY(QK_MACRO_2)",
       "KC_LEFT",
       "KC_DOWN",
       "KC_RGHT",
